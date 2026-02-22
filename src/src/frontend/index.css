@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    color-scheme: light;
+    
+    /* Light mode: Soft blues with white base */
+    --background: 0.98 0.01 240;
+    --foreground: 0.20 0.04 240;
+    
+    /* Cards: Clean white with subtle shadow */
+    --card: 1 0 0;
+    --card-foreground: 0.20 0.04 240;
+    
+    --popover: 1 0 0;
+    --popover-foreground: 0.20 0.04 240;
+    
+    /* Primary: Blue-to-teal gradient base (bright blue) */
+    --primary: 0.52 0.16 230;
+    --primary-foreground: 0.98 0.01 240;
+    
+    /* Secondary: Light slate blue */
+    --secondary: 0.92 0.02 240;
+    --secondary-foreground: 0.25 0.04 240;
+    
+    /* Muted */
+    --muted: 0.95 0.01 240;
+    --muted-foreground: 0.50 0.03 240;
+    
+    /* Accent: Warm amber for alerts */
+    --accent: 0.75 0.15 55;
+    --accent-foreground: 0.15 0.02 55;
+    
+    /* Destructive */
+    --destructive: 0.60 0.20 25;
+    --destructive-foreground: 0.98 0.01 240;
+    
+    /* Success: Ocean green */
+    --success: 0.65 0.12 165;
+    --success-foreground: 0.98 0.01 165;
+    
+    /* Warning: Amber */
+    --warning: 0.70 0.16 50;
+    --warning-foreground: 0.15 0.02 50;
+    
+    /* Borders */
+    --border: 0.88 0.02 240;
+    --input: 0.90 0.02 240;
+    --ring: 0.45 0.14 240;
+    
+    /* Charts: blues and ocean tones */
+    --chart-1: 0.55 0.14 240;
+    --chart-2: 0.65 0.10 200;
+    --chart-3: 0.70 0.12 165;
+    --chart-4: 0.50 0.16 260;
+    --chart-5: 0.75 0.15 55;
+    
+    --sidebar: 0.98 0.01 240;
+    --sidebar-foreground: 0.20 0.04 240;
+    --sidebar-primary: 0.45 0.14 240;
+    --sidebar-primary-foreground: 0.98 0.01 240;
+    --sidebar-accent: 0.92 0.02 240;
+    --sidebar-accent-foreground: 0.25 0.04 240;
+    --sidebar-border: 0.88 0.02 240;
+    --sidebar-ring: 0.45 0.14 240;
+  }
+
+  .dark {
+    color-scheme: dark;
+    
+    /* Dark mode: Deep slate to dark blue */
+    --background: 0.18 0.04 240;
+    --foreground: 0.95 0.01 240;
+    
+    /* Cards: Elevated dark surface */
+    --card: 0.22 0.04 240;
+    --card-foreground: 0.95 0.01 240;
+    
+    --popover: 0.22 0.04 240;
+    --popover-foreground: 0.95 0.01 240;
+    
+    /* Primary: Bright ocean blue */
+    --primary: 0.60 0.14 240;
+    --primary-foreground: 0.15 0.04 240;
+    
+    /* Secondary: Mid slate */
+    --secondary: 0.30 0.04 240;
+    --secondary-foreground: 0.95 0.01 240;
+    
+    /* Muted */
+    --muted: 0.28 0.04 240;
+    --muted-foreground: 0.65 0.03 240;
+    
+    /* Accent: Bright amber */
+    --accent: 0.75 0.15 55;
+    --accent-foreground: 0.15 0.04 55;
+    
+    /* Destructive */
+    --destructive: 0.60 0.20 25;
+    --destructive-foreground: 0.95 0.01 240;
+    
+    /* Success */
+    --success: 0.70 0.12 165;
+    --success-foreground: 0.15 0.04 165;
+    
+    /* Warning */
+    --warning: 0.75 0.16 50;
+    --warning-foreground: 0.15 0.04 50;
+    
+    /* Borders */
+    --border: 0.30 0.04 240;
+    --input: 0.30 0.04 240;
+    --ring: 0.60 0.14 240;
+    
+    /* Charts */
+    --chart-1: 0.60 0.14 240;
+    --chart-2: 0.70 0.12 200;
+    --chart-3: 0.75 0.14 165;
+    --chart-4: 0.65 0.16 260;
+    --chart-5: 0.75 0.15 55;
+    
+    --sidebar: 0.22 0.04 240;
+    --sidebar-foreground: 0.95 0.01 240;
+    --sidebar-primary: 0.60 0.14 240;
+    --sidebar-primary-foreground: 0.15 0.04 240;
+    --sidebar-accent: 0.30 0.04 240;
+    --sidebar-accent-foreground: 0.95 0.01 240;
+    --sidebar-border: 0.30 0.04 240;
+    --sidebar-ring: 0.60 0.14 240;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .reveal-on-scroll {
+    opacity: 1;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  
+  .reveal-on-scroll.revealed {
+    animation: reveal 0.6s ease-out;
+  }
+
+  .shadow-glow-blue {
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.2);
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, 
+      rgba(59, 130, 246, 0.05) 0%, 
+      rgba(20, 184, 166, 0.1) 50%, 
+      rgba(59, 130, 246, 0.05) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
